@@ -161,8 +161,8 @@ const List:FC<ListInterface> = ({items}:ListInterface) =>{
                     </Box>
                     <Box sx={listDirectionColumn}>
                     {items.map((item:Item,index:any) =>(
-                            <div
-                                style={directionItemsList}
+                            <Box
+                                sx={directionItemsList}
                                 key={index}
                                 onMouseOver={() => handleMouseOver(index)}
                                 onMouseOut={() => handleMouseOut(index)}
@@ -181,7 +181,7 @@ const List:FC<ListInterface> = ({items}:ListInterface) =>{
                                 {shownComments[index] && (
                                     <Typography sx={styledTypo} onClick={(e) =>handleDelete(e,item?.id)}>Delete</Typography>
                                 )}
-                            </div>
+                            </Box>
                         ))}
                     </Box>
                 </Box>
